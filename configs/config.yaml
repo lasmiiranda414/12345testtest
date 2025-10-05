@@ -1,0 +1,16 @@
+project_name: ragchat
+crawl:
+  allow_domains: []          # Beispiel später: ["scnat.ch", "proclim.scnat.ch"]
+  obey_robots_txt: true
+  rate_limit_per_domain: 1.0
+  max_pages: 150
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  indices_dir: data/indices
+retrieval:
+  hybrid: true
+  bm25_top_k: 20
+  dense_top_k: 20
+  chunk_size_tokens: 512
+  chunk_overlap_tokens: 64

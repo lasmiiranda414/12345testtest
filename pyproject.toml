@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "ragchat"
+version = "0.1.0"
+description = "Lokaler RAG-Chatbot (Hybrid Retrieval)"
+authors = ["you <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "ragchat", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+typer = { version = "^0.19.2", extras = ["all"] }
+rich = "^14.1.0"
+pyyaml = "^6.0.3"
+httpx = "^0.28.1"
+trafilatura = "^2.0.0"
+beautifulsoup4 = "^4.13.5"
+lxml = ">=5.3,<6"
+rapidfuzz = "^3.14.1"
+sentence-transformers = "^3.0.1"
+faiss-cpu = "^1.8.0"
+rank-bm25 = "^0.2.2"
+numpy = "^1.26.4"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.9.0"
+ruff = "^0.13.1"
+
+[tool.poetry.scripts]
+ragchat = "ragchat.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
